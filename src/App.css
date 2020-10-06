@@ -1,38 +1,64 @@
 .App {
-  text-align: center;
+  background-color: #4B4B4B;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .input-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 20vh;
+  background-color: #f2f2f2;
 }
 
-.App-link {
-  color: #61dafb;
+.App .input-form h2 {
+  color: #B47171;
+  font-size: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .input-form .text-container input {
+  width: 20rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  color: #B47171;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #707070;
 }
+
+.App .input-form .text-container input:focus {
+  outline: none;
+  width: 21rem;
+  -webkit-transition: ease-in-out, width .5s ease-in-out;
+  transition: ease-in-out, width .5s ease-in-out;
+}
+
+.App .input-form .text-container button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.2rem;
+  color: #B47171;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: unset;
+  border-top-left-radius: unset;
+  vertical-align: none;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.App .input-form .text-container button:hover {
+  background-color: #4B4B4B;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+/*# sourceMappingURL=App.css.map */

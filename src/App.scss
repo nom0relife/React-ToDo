@@ -1,0 +1,65 @@
+$background:#4B4B4B;
+$navbar-background-color:#f2f2f2;
+$navbar-text-color:#B47171;
+
+.App {
+    background-color: $background;
+    height: 100vh;
+
+    .input-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 20vh;
+        background-color: $navbar-background-color;
+
+        h2 {
+            color: $navbar-text-color;
+            font-size: 2rem;
+        }
+
+        .text-container {
+
+
+            input {
+                width: 20rem;
+                height: 2.5rem;
+                font-size: 1.2rem;
+                color: $navbar-text-color;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                border: 1px solid #707070;
+
+                &:focus {
+                    outline: none;
+                    width: 21rem;
+                    transition: ease-in-out, width .5s ease-in-out;
+
+                }
+            }
+
+            button {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.2rem;
+                color: $navbar-text-color;
+                border-bottom-right-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-left-radius: unset;
+                border-top-left-radius: unset;
+                vertical-align: none;
+                padding: 0;
+                background-color: #ffffff;
+
+                &:hover {
+                    background-color: #4B4B4B;
+                    transition: .5s ease-in-out;
+                }
+
+            }
+        }
+
+
+    }
+}
