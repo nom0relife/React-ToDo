@@ -6,18 +6,26 @@ $navbar-text-color:#B47171;
     background-color: $background;
     height: 100vh;
 
-    .input-form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        height: 20vh;
+    header {
         background-color: $navbar-background-color;
 
         h2 {
             color: $navbar-text-color;
             font-size: 2rem;
+            text-align: center;
+
         }
+
+    }
+
+    .input-form {
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        height: 10vh;
+        background-color: $navbar-background-color;
+
+
 
         .text-container {
 
@@ -93,6 +101,11 @@ $navbar-text-color:#B47171;
         width: 28px;
         height: 29px;
         margin: .7rem .7rem .7rem;
+    }
+
+    button {
+        background-color: $background;
+        outline: none;
     }
 }
 

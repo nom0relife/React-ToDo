@@ -5,7 +5,9 @@ export default function Todo() {
   return (
     <div className="todo-container">
       <span>Test</span>
-      <img src={trash} className="" alt="" />
+      <button>
+        <img src={trash} className="" alt="" />
+      </button>
     </div>
   );
 }
