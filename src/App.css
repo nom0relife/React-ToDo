@@ -51,7 +51,7 @@
   border-top-right-radius: 10px;
   border-bottom-left-radius: unset;
   border-top-left-radius: unset;
-  vertical-align: none;
+  vertical-align: top;
   padding: 0;
   background-color: #ffffff;
 }
@@ -60,5 +60,45 @@
   background-color: #4B4B4B;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
+}
+
+.white-text {
+  color: #C8C8C8;
+}
+
+.right-line {
+  border-right: 1px solid #707070;
+}
+
+.left-line {
+  border-left: 1px solid #707070;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #707070;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.todo-container span {
+  font-size: 1.3rem;
+  color: #B47171;
+  padding: .7rem 0 .7rem .7rem;
+}
+
+.todo-container img {
+  width: 28px;
+  height: 29px;
+  margin: .7rem .7rem .7rem;
+}
+
+.full-height {
+  height: 80vh;
 }
 /*# sourceMappingURL=App.css.map */

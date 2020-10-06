@@ -21,7 +21,6 @@ $navbar-text-color:#B47171;
 
         .text-container {
 
-
             input {
                 width: 20rem;
                 height: 2.5rem;
@@ -48,7 +47,7 @@ $navbar-text-color:#B47171;
                 border-top-right-radius: 10px;
                 border-bottom-left-radius: unset;
                 border-top-left-radius: unset;
-                vertical-align: none;
+                vertical-align: top;
                 padding: 0;
                 background-color: #ffffff;
 
@@ -62,4 +61,41 @@ $navbar-text-color:#B47171;
 
 
     }
+
+}
+
+.white-text {
+    color: #C8C8C8;
+}
+
+.right-line {
+    border-right: 1px solid #707070;
+}
+
+.left-line {
+    border-left: 1px solid #707070;
+}
+
+.todo-container {
+    display: flex;
+    border: 1px solid #707070;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+
+    span {
+        font-size: 1.3rem;
+        color: $navbar-text-color;
+        padding: .7rem 0 .7rem .7rem;
+    }
+
+    img {
+        width: 28px;
+        height: 29px;
+        margin: .7rem .7rem .7rem;
+    }
+}
+
+.full-height {
+    height: 80vh;
 }
