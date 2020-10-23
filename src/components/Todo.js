@@ -2,7 +2,7 @@ import React from "react";
 // import trash from "../images/trash.png";
 
 export default function Todo({ text, todo, todos, setTodos }) {
-  const deleteHandler = (e) => {
+  const deleteHandler = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
     // console.log(todo);
   };
