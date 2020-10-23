@@ -5,18 +5,15 @@ import "./App.css";
 
 function App() {
   const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState({
-    text: inputText,
-    completed: false
-  });
+  const [todos, setTodos] = useState([]);
 
   return (
     <div className="App">
       <header>
         <h2>Do Things {inputText}</h2>
       </header>
-      <Navigation todos={todos} setTodos={setTodos} setInputText={setInputText} />
-      <TodoList />
+      <Navigation todos={todos} inputText={inputText} setTodos={setTodos} setInputText={setInputText} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

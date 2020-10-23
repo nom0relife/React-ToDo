@@ -84,29 +84,30 @@ $navbar-text-color:#B47171;
     border-left: 1px solid #707070;
 }
 
-.todo-container {
-    display: flex;
-    border: 1px solid #707070;
-    justify-content: space-between;
-    width: 60%;
+.todo-container li{
+    display: grid;
+    // gap: 5px;
+    grid-template-columns:10fr 1fr 1fr;
+    // grid-template-rows: auto;
+    border: 1px solid #707070;   
+    width: 80%;
     margin: 0 auto;
 
-    span {
+    .text {
         font-size: 1.3rem;
         color: $navbar-text-color;
-        padding: .7rem 0 .7rem .7rem;
+        // padding: .7rem 0 .7rem .7rem;
+        text-align: left;
     }
 
-    img {
-        width: 28px;
-        height: 29px;
-        margin: .7rem .7rem .7rem;
-    }
 
     button {
-        background-color: $background;
+        background-color: transparent;
         outline: none;
+        font-size: 1rem;
+    
     }
+   
 }
 
 .full-height {

@@ -70,33 +70,26 @@
   border-left: 1px solid #707070;
 }
 
-.todo-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.todo-container li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10fr 1fr 1fr;
+      grid-template-columns: 10fr 1fr 1fr;
   border: 1px solid #707070;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 
-.todo-container span {
+.todo-container li .text {
   font-size: 1.3rem;
   color: #B47171;
-  padding: .7rem 0 .7rem .7rem;
+  text-align: left;
 }
 
-.todo-container img {
-  width: 28px;
-  height: 29px;
-  margin: .7rem .7rem .7rem;
-}
-
-.todo-container button {
-  background-color: #4B4B4B;
+.todo-container li button {
+  background-color: transparent;
   outline: none;
+  font-size: 1rem;
 }
 
 .full-height {
