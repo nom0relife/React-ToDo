@@ -6,11 +6,6 @@ export default function Navigation({ inputText, setInputText, todos, setTodos })
     console.log(e.target.value);
     setInputText(e.target.value);
   }
-  // const addHandler = (e) => {
-  //   const targetValue = textHandler(e);
-  //   console.log(targetValue);
-  // }
-
 
   const submitHandler = (e) => {
     e.preventDefault();

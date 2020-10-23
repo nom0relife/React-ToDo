@@ -86,6 +86,13 @@
   text-align: left;
 }
 
+.todo-container li .done-text {
+  font-size: 1.3rem;
+  color: #B47171;
+  text-align: left;
+  text-decoration: line-through;
+}
+
 .todo-container li button {
   background-color: transparent;
   outline: none;
