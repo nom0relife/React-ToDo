@@ -7,19 +7,16 @@ export default function Done({ text, todo, todos, setTodos, done, dones, setDone
     }
 
     const redoHandler = () => {
-        setDones(dones.filter((element) => {
-            element.completed = false;
-            return setTodos([...todos, element])
-        })
-        );
+        setTodos([...todos, { text, completed: false, id: Math.random() * 1000 }])
+        setDones(dones.filter((element) => element.id !== done.id))
     };
 
     return (
         <div className="todo-container">
             <li>
-                <div className="done-text">{done.text}</div>
+                <div className="done-text">{text}</div>
                 <button onClick={redoHandler} className="button2">
-                    <i class="fas fa-redo"></i>
+                    <i className="fas fa-redo"></i>
                 </button>
                 <button onClick={deleteHandler} className="button2">
                     <i className="fas fa-trash"></i>

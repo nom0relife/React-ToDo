@@ -9,15 +9,8 @@ export default function Todo({ text, todo, todos, setTodos, dones, setDones }) {
   };
 
   const checkHandler = () => {
-    setTodos(
-      todos.filter((element) => {
-        if (element.id === todo.id) {
-          element.completed = true;
-          return setDones([...dones, element]);
-        }
-        return;
-      })
-    );
+    setDones([...dones, { text, completed: true, id: Math.random() * 1000 }]);
+    setTodos(todos.filter((element) => element.id !== todo.id));
   };
 
   return (
