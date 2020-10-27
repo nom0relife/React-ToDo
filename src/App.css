@@ -1,8 +1,8 @@
 .App {
   display: -ms-grid;
   display: grid;
-  grid-template: 'nav' 'list' 'todoNav';
-  background-color: #393C43;
+  grid-template: "nav" "list" "todoNav";
+  background-color: #393c43;
   width: 100vw;
   height: 100vh;
 }
@@ -11,37 +11,75 @@
   grid-area: nav;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
   height: 20vh;
-  grid-template: 'burger title. ' '.title .' '. menu .';
-  color: #C8C8C8;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+      grid-template-areas: "burger title ." ". title ." ". menu .";
+  color: #c8c8c8;
 }
 
 .App .navbar .burger {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: burger;
-  height: 1vh;
   cursor: pointer;
 }
 
 .App .navbar .ham div:nth-child(1) {
-  -webkit-transform: translate(5px, 8px) rotate(-45deg);
-          transform: translate(5px, 8px) rotate(-45deg);
+  -webkit-transform: translate(0px, 9px) rotate(-45deg);
+          transform: translate(0px, 9px) rotate(-45deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .App .navbar .ham div:nth-child(2) {
-  display: none;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  opacity: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .App .navbar .ham div:nth-child(3) {
-  -webkit-transform: translate(5px, -1px) rotate(45deg);
-          transform: translate(5px, -1px) rotate(45deg);
+  -webkit-transform: translate(0px, -9px) rotate(45deg);
+          transform: translate(0px, -9px) rotate(45deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.App .navbar .noHam div:nth-child(1) {
+  -webkit-transform: translate(0px, 0px) rotate(0deg);
+          transform: translate(0px, 0px) rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.App .navbar .noHam div:nth-child(2) {
+  opacity: 1;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.App .navbar .noHam div:nth-child(3) {
+  -webkit-transform: translate(0px, 0px) rotate(0deg);
+          transform: translate(0px, 0px) rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .App .navbar .title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
   grid-area: title;
   text-align: center;
 }
 
 .App .navbar .menu {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
   grid-area: menu;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,8 +94,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 3px solid #7436F1;
-  width: 300px;
+  border: 3px solid #7436f1;
+  min-width: 200px;
   height: auto;
   border-radius: 100px;
   position: relative;
@@ -70,20 +108,53 @@
 }
 
 .App .navbar .menu i:after {
-  content: '';
+  content: "";
   position: absolute;
-  border: 3px solid #C8C8C8;
+  border: 3px solid #c8c8c8;
   width: 40px;
   height: 40px;
   border-radius: 30px;
-  left: -9px;
+  left: -8px;
   top: -7px;
 }
 
 .App .navbar .burger div {
   width: 30px;
   height: 3px;
-  background-color: #C8C8C8;
+  background-color: #c8c8c8;
   margin-bottom: 6px;
+}
+
+.App .list {
+  grid-area: list;
+  height: 60vh;
+}
+
+.App .todoNav {
+  grid-area: todoNav;
+  display: -ms-grid;
+  display: grid;
+  height: 20vh;
+      grid-template-areas: "plus plus plus" "icons icons icons" "icons icons icons";
+  background-color: #7436f1;
+}
+
+.App .todoNav .form-menu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: plus;
+}
+
+.App .todoNav .form-icons {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: icons;
+}
+
+.App .todoNav .form {
+  display: none;
 }
 /*# sourceMappingURL=App.css.map */

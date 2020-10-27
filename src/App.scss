@@ -1,216 +1,144 @@
-$background:#393C43;
-$purple:#7436F1;
-$text:#C8C8C8;
-$white:#ffffff;
+$background: #393c43;
+$purple: #7436f1;
+$text: #c8c8c8;
+$white: #ffffff;
 
-// .App {
-//     background-color: $background;
-//     height: 100vh;
-
-//     header {
-//         background-color: $navbar-background-color;
-
-//         h2 {
-//             color: $navbar-text-color;
-//             font-size: 2rem;
-//             text-align: center;
-
-//         }
-
-//     }
-
-//     .input-form {
-//         text-align: center;
-//         display: block;
-//         margin: 0 auto;
-//         height: 10vh;
-//         background-color: $navbar-background-color;
-
-
-
-//         .text-container {
-
-//             input {
-//                 width: 20rem;
-//                 height: 2.5rem;
-//                 font-size: 1.2rem;
-//                 color: $navbar-text-color;
-//                 border-top-left-radius: 10px;
-//                 border-bottom-left-radius: 10px;
-//                 border: 1px solid #707070;
-
-//                 &:focus {
-//                     outline: none;
-//                     width: 21rem;
-//                     transition: ease-in-out, width .5s ease-in-out;
-
-//                 }
-//             }
-
-//             button {
-//                 width: 2.5rem;
-//                 height: 2.5rem;
-//                 font-size: 1.2rem;
-//                 color: $navbar-text-color;
-//                 border-bottom-right-radius: 10px;
-//                 border-top-right-radius: 10px;
-//                 border-bottom-left-radius: unset;
-//                 border-top-left-radius: unset;
-//                 vertical-align: top;
-//                 padding: 0;
-//                 background-color: #ffffff;
-
-//                 &:hover {
-//                     background-color: #4B4B4B;
-//                     transition: .5s ease-in-out;
-//                 }
-
-//             }
-//         }
-
-
-//     }
-
-// }
-
-// .white-text {
-//     color: #C8C8C8;
-// }
-
-// .right-line {
-//     border-right: 1px solid #707070;
-// }
-
-// .left-line {
-//     border-left: 1px solid #707070;
-// }
-
-// .todo-container li{
-//     display: grid;
-//     // gap: 5px;
-//     grid-template-columns:10fr 1fr 1fr;
-//     // grid-template-rows: auto;
-//     border: 1px solid #707070;   
-//     width: 80%;
-//     margin: 0 auto;
-
-//     .text {
-//         font-size: 1.3rem;
-//         color: $navbar-text-color;       
-//         text-align: left;
-//     }
-
-//     .done-text{
-//         font-size: 1.3rem;
-//         color: $navbar-text-color;       
-//         text-align: left;
-//         text-decoration: line-through;
-//     }
-
-
-//     button {
-//         background-color: transparent;
-//         outline: none;
-//         font-size: 1rem;
-    
-//     }
-   
-// }
-
-// .full-height {
-//     height: 80vh;
-// }
-
-.App{
-    display: grid;
-  grid-template: 'nav' 'list' 'todoNav';
+.App {
+  display: grid;
+  grid-template:
+    "nav"
+    "list"
+    "todoNav";
 
   background-color: $background;
   width: 100vw;
   height: 100vh;
 
-  .navbar{
+  .navbar {
     grid-area: nav;
     display: grid;
-    height: 20vh;  
-    grid-template: 
-    'burger title. '
-    '.title .'
-    '. menu .'
-    ;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 20vh;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "burger title ."
+      ". title ."
+      ". menu .";
 
-
-
-
-    .burger{
-        grid-area: burger;
-        height: 1vh;
-        cursor: pointer;
-       
+    .burger {
+      grid-area: burger;
+      // height: 1vh;
+      cursor: pointer;
     }
 
-    .ham{ 
-        
-        div:nth-child(1){
-            transform:translate(5px,8px) rotate(-45deg);
-            // transform: translate(0px, 10px);
-        }
+    .ham {
+      div:nth-child(1) {
+        transform: translate(0px, 9px) rotate(-45deg);
+        transition: 0.5s ease-in-out;
+        // transform: translate(0px, 10px);
+      }
 
-        div:nth-child(2){
-            display: none;
-        }
+      div:nth-child(2) {
+        transform: rotate(360deg);
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+      }
 
-        div:nth-child(3){
-            transform:translate(5px,-1px) rotate(45deg);
-        }
+      div:nth-child(3) {
+        transform: translate(0px, -9px) rotate(45deg);
+        transition: 0.5s ease-in-out;
+      }
     }
 
-    .title{
-        grid-area: title;
-        text-align: center;
-    }
-    .menu{
-        grid-area: menu;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        border: 3px solid $purple;
-        width: 300px;
-        height: auto;
-        border-radius: 100px;
-        position: relative;
-        
-        i{
-            position: absolute;
-            left: 10px;
-            font-size: 25px;
-            // padding-right: 10px;
-           
-            &:after{     
-                content: '';          
-                position: absolute;            
-                border:3px solid $text;
-                width: 40px;
-                height: 40px;
-                border-radius: 30px;
-                left: -9px;
-                top: -7px;
-                
-            }
-           
-        }
-    }
-    color:$text;
+    .noHam {
+      div:nth-child(1) {
+        transform: translate(0px, 0px) rotate(-0deg);
+        transition: 0.5s ease-in-out;
+        // transform: translate(0px, 10px);
+      }
 
-    .burger{
-        div{
-            width: 30px;
-            height: 3px;
-            background-color: $text;
-            margin-bottom: 6px;
-        }
+      div:nth-child(2) {
+        opacity: 1;
+        transition: 1s ease-in-out;
+      }
+
+      div:nth-child(3) {
+        transform: translate(0px, 0px) rotate(0deg);
+        transition: 0.5s ease-in-out;
+      }
     }
 
-}
+    .title {
+      grid-area: title;
+      text-align: center;
+    }
+    .menu {
+      grid-area: menu;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid $purple;
+      min-width: 200px;
+      height: auto;
+      border-radius: 100px;
+      position: relative;
+
+      i {
+        position: absolute;
+        left: 10px;
+        font-size: 25px;
+        // padding-right: 10px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          border: 3px solid $text;
+          width: 40px;
+          height: 40px;
+          border-radius: 30px;
+          left: -8px;
+          top: -7px;
+        }
+      }
+    }
+    color: $text;
+
+    .burger {
+      div {
+        width: 30px;
+        height: 3px;
+        background-color: $text;
+        margin-bottom: 6px;
+      }
+    }
+  }
+
+  .list {
+    grid-area: list;
+    height: 60vh;
+  }
+
+  .todoNav {
+    grid-area: todoNav;
+    display: grid;
+    height: 20vh;
+    grid-template-areas:
+      "plus plus plus"
+      "icons icons icons"
+      "icons icons icons";
+    background-color: $purple;
+
+    .form-menu {
+      grid-area: plus;
+    }
+
+    .form-icons {
+      grid-area: icons;
+    }
+
+    .form {
+      display: none;
+    }
+  }
 }
