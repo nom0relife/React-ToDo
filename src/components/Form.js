@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Navigation({
+export default function Form({
   inputText,
   setInputText,
   todos,
