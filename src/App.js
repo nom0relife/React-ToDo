@@ -8,6 +8,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [dones, setDones] = useState([]);
   const [changeClass, setChangeClass] = useState(false);
+  const [crossClass, setCrossClass] = useState(false);
 
   // const burger = () => {
   //   //toggle class
@@ -44,13 +45,22 @@ function App() {
 
       <div className="todoNav">
         <div className="form-menu">
-          <i class="fas fa-plus-circle"></i>
+          <i
+            onClick={() => {
+              setCrossClass(!crossClass);
+            }}
+            className={
+              crossClass === false
+                ? "fas fa-plus-circle noCross"
+                : "fas fa-plus-circle cross"
+            }
+          ></i>
         </div>
-        <div className="form-icons">
-          <i class="fas fa-calendar-alt"></i>
-          <i class="far fa-check-circle"></i>
+        <div className={crossClass === false ? "form-icons" : "no-form-icons"}>
+          <i className="fas fa-calendar-alt"></i>
+          <i className="far fa-check-circle"></i>
         </div>
-        <div className="form">
+        <div className={crossClass === false ? "noInputForm" : "input-form"}>
           <Form
             todos={todos}
             inputText={inputText}

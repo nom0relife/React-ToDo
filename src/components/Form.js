@@ -25,19 +25,17 @@ export default function Form({
   };
 
   return (
-    <form className="input-form">
-      <div className="text-container">
-        <input
-          onChange={textHandler}
-          value={inputText}
-          type="text"
-          name=""
-          id=""
-        />
-        <button onClick={submitHandler} className="btn btn-secondary">
-          +
-        </button>
-      </div>
+    <form className="input">
+      <input
+        onChange={textHandler}
+        value={inputText}
+        type="text"
+        name=""
+        id=""
+      />
+      <button onClick={submitHandler} className="btn">
+        <i class="fas fa-arrow-circle-right"></i>
+      </button>
     </form>
   );
 }

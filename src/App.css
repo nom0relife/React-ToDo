@@ -127,15 +127,15 @@
 
 .App .list {
   grid-area: list;
-  height: 60vh;
+  height: 65vh;
 }
 
 .App .todoNav {
   grid-area: todoNav;
   display: -ms-grid;
   display: grid;
-  height: 20vh;
-      grid-template-areas: "plus plus plus" "icons icons icons" "icons icons icons";
+  height: 15vh;
+      grid-template-areas: "plus plus plus" "icons icons icons";
   background-color: #7436f1;
 }
 
@@ -144,17 +144,117 @@
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: plus;
+  position: relative;
+}
+
+.App .todoNav .form-menu .fas {
+  font-size: 80px;
+  color: #c8c8c8;
+  position: absolute;
+  left: 50%;
+  top: -42px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.App .todoNav .form-menu .cross {
+  -webkit-transform: translate(-50%) rotate(225deg);
+          transform: translate(-50%) rotate(225deg);
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+
+.App .todoNav .form-menu .noCross {
+  -webkit-transform: translate(-50%) rotate(0deg);
+          transform: translate(-50%) rotate(0deg);
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
 .App .todoNav .form-icons {
   -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: icons;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #c8c8c8;
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
-.App .todoNav .form {
+.App .todoNav .form-icons .fas {
+  font-size: 80px;
+}
+
+.App .todoNav .form-icons .far {
+  font-size: 80px;
+}
+
+.App .todoNav .no-form-icons {
   display: none;
+}
+
+.App .todoNav .noInputForm {
+  height: 0;
+  visibility: hidden;
+  z-index: -8;
+  -webkit-transition: visibility 0s, height 0.8s linear;
+  transition: visibility 0s, height 0.8s linear;
+}
+
+.App .todoNav .noInputForm input {
+  display: none;
+  -webkit-transition: 0s linear;
+  transition: 0s linear;
+}
+
+.App .todoNav .input-form {
+  position: absolute;
+  width: 100%;
+  height: 15vh;
+  background-color: #7436f1;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.8s linear;
+  transition: 0.8s linear;
+}
+
+.App .todoNav .input-form .input {
+  font-size: 20px;
+  padding: 1em 1em 0;
+}
+
+.App .todoNav .input-form .input input[type="text"] {
+  border-radius: 12px;
+}
+
+.App .todoNav .input-form .input .btn .fas {
+  color: #c8c8c8;
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  .input-form .input {
+    font-size: 25px !important;
+    padding: 1em 1em 0;
+  }
+  .input-form .input .btn .fas {
+    font-size: 25px !important;
+  }
 }
 /*# sourceMappingURL=App.css.map */
