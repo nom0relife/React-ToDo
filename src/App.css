@@ -187,6 +187,7 @@
   color: #c8c8c8;
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
+  visibility: visible;
 }
 
 .App .todoNav .form-icons .fas {
@@ -198,21 +199,32 @@
 }
 
 .App .todoNav .no-form-icons {
-  display: none;
+  visibility: none;
+  -webkit-transition: visibility 0.8s;
+  transition: visibility 0.8s;
 }
 
 .App .todoNav .noInputForm {
-  height: 0;
-  visibility: hidden;
+  visibility: 0;
   z-index: -8;
-  -webkit-transition: visibility 0s, height 0.8s linear;
-  transition: visibility 0s, height 0.8s linear;
+  -webkit-transition: visibility 0.8s;
+  transition: visibility 0.8s;
 }
 
-.App .todoNav .noInputForm input {
+.App .todoNav .noInputForm .input {
   display: none;
-  -webkit-transition: 0s linear;
-  transition: 0s linear;
+}
+
+.App .todoNav .noInputForm .input input[type="text"] {
+  border-radius: 100px;
+  -webkit-transition: 0.8s linear;
+  transition: 0.8s linear;
+}
+
+.App .todoNav .noInputForm .input .btn .fas {
+  display: none;
+  -webkit-transition: display 0.8s;
+  transition: display 0.8s;
 }
 
 .App .todoNav .input-form {
@@ -230,8 +242,6 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: 0.8s linear;
-  transition: 0.8s linear;
 }
 
 .App .todoNav .input-form .input {

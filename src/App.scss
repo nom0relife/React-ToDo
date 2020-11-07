@@ -161,6 +161,7 @@ $white: #ffffff;
       align-items: center;
       color: $text;
       transition: 0.8s ease-in-out;
+      visibility: visible;
 
       .fas {
         font-size: 80px;
@@ -172,19 +173,28 @@ $white: #ffffff;
     }
 
     .no-form-icons {
-      display: none;
+      visibility: none;
+      // display: none;
+      transition: visibility 0.8s;
     }
 
     .noInputForm {
-      //   width: 0;
-      height: 0;
-      visibility: hidden;
+      visibility: 0;
       z-index: -8;
-      transition: visibility 0s, height 0.8s linear;
+      transition: visibility 0.8s;
 
-      input {
+      .input {
         display: none;
-        transition: 0s linear;
+        input[type="text"] {
+          border-radius: 100px;
+          transition: 0.8s linear;
+        }
+        .btn {
+          .fas {
+            display: none;
+            transition: display 0.8s;
+          }
+        }
       }
     }
 
@@ -197,7 +207,7 @@ $white: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: 0.8s linear;
+      // transition: 0.8s linear;
 
       .input {
         font-size: 20px;
