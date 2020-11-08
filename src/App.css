@@ -1,4 +1,5 @@
 .App {
+  font-size: 62.5%;
   display: -ms-grid;
   display: grid;
   grid-template: "nav" "list" "todoNav";
@@ -256,6 +257,116 @@
 .App .todoNav .input-form .input .btn .fas {
   color: #c8c8c8;
   font-size: 20px;
+}
+
+.App .todo-list {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.App .todo-list li {
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  list-style: none;
+  color: #9a9a9d;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.App .todo-list li .text {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  text-align: left;
+  padding-left: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.App .todo-list li button {
+  border: none;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #ffffff;
+}
+
+.App .todo-list li button .circle {
+  margin-left: 0.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #7436f1;
+}
+
+.App .done-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.App .done-container li {
+  border-radius: 12px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  list-style: none;
+  color: #9a9a9d;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.App .done-container li .done-text {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  text-align: left;
+  padding-left: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.App .done-container li button {
+  border: none;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  background-color: #ffffff;
+}
+
+.App .done-container li button .circle {
+  margin-left: 0.5rem;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 2px solid #7436f1;
+}
+
+.App .done-container li button .circle .tick1 {
+  width: 1px;
+  height: 10px;
+  border: 1px solid #7436f1;
+  border-radius: 10px;
+  background-color: #7436f1;
+  -webkit-transform: translate(4px, 3px) rotate(-28deg);
+          transform: translate(4px, 3px) rotate(-28deg);
+}
+
+.App .done-container li button .circle .tick2 {
+  width: 1px;
+  height: 18px;
+  border: 1px solid #7436f1;
+  background-color: #7436f1;
+  -webkit-transform: translate(10px, -15px) rotate(25deg);
+          transform: translate(10px, -15px) rotate(25deg);
+  border-radius: 10px;
 }
 
 @media only screen and (min-width: 600px) {

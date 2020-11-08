@@ -5,8 +5,8 @@ import Done from "./Done";
 export default function TodoList({ todos, setTodos, dones, setDones }) {
   return (
     <div className="container-fluid ">
-      <div className="col-12 text-center mt-2 right-line">
-        <h3 className="white-text">Done Todos</h3>
+      <div className="col-12 text-center mt-2 ">
+        <h3 className="white-text">To do</h3>
         <ul className="todo-list">
           {todos.map((todo) => (
             <Todo
@@ -22,7 +22,7 @@ export default function TodoList({ todos, setTodos, dones, setDones }) {
         </ul>
       </div>
       <div className="col-12 text-center mt-2 ">
-        <h3 className="white-text">Done Todos</h3>
+        <h3 className="white-text">Done</h3>
         <ul className="todo-list">
           {dones.map((done) => (
             <Done

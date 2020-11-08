@@ -16,13 +16,14 @@ export default function Todo({ text, todo, todos, setTodos, dones, setDones }) {
   return (
     <div className="todo-container">
       <li>
-        <div className="text">{text}</div>
         <button onClick={checkHandler} className="button1">
-          <i className="fas fa-check"></i>
+          {/* <i className="fas fa-check"></i> */}
+          <div className="circle"></div>
         </button>
-        <button onClick={deleteHandler} className="button2">
+        <div className="text">{text}</div>
+        {/* <button onClick={deleteHandler} className="button2">
           <i className="fas fa-trash"></i>
-        </button>
+        </button> */}
       </li>
     </div>
   );

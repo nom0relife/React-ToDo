@@ -1,9 +1,11 @@
 $background: #393c43;
 $purple: #7436f1;
 $text: #c8c8c8;
+$toDoText: #9a9a9d;
 $white: #ffffff;
 
 .App {
+  font-size: 62.5%;
   display: grid;
   grid-template:
     "nav"
@@ -223,6 +225,96 @@ $white: #ffffff;
         }
       }
       //   display: none;
+    }
+  }
+
+  .todo-list {
+    width: 100%;
+    margin: 0 auto;
+
+    li {
+      border-radius: 12px;
+      background-color: $white;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      color: $toDoText;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      .text {
+        flex-grow: 2;
+        text-align: left;
+        padding-left: 1rem;
+        padding-bottom: 0.2rem;
+      }
+
+      button {
+        border: none;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background-color: $white;
+        .circle {
+          margin-left: 0.5rem;
+          height: 1.2rem;
+          width: 1.2rem;
+          background-color: #ffffff;
+          border-radius: 50%;
+          border: 2px solid $purple;
+        }
+      }
+    }
+  }
+
+  .done-container {
+    width: 100%;
+    margin: 0 auto;
+
+    li {
+      border-radius: 12px;
+      background-color: $white;
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+      color: $toDoText;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      .done-text {
+        flex-grow: 2;
+        text-align: left;
+        padding-left: 1rem;
+        padding-bottom: 0.2rem;
+      }
+
+      button {
+        border: none;
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+        background-color: $white;
+        .circle {
+          margin-left: 0.5rem;
+          height: 1.2rem;
+          width: 1.2rem;
+          background-color: #ffffff;
+          border-radius: 50%;
+          border: 2px solid $purple;
+          .tick1 {
+            width: 1px;
+            height: 10px;
+            border: 1px solid $purple;
+            border-radius: 10px;
+            background-color: $purple;
+            transform: translate(4px, 3px) rotate(-28deg);
+          }
+          .tick2 {
+            width: 1px;
+            height: 18px;
+            border: 1px solid $purple;
+            background-color: $purple;
+            transform: translate(10px, -15px) rotate(25deg);
+            border-radius: 10px;
+          }
+        }
+      }
     }
   }
 }
