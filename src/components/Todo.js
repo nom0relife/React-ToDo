@@ -21,9 +21,9 @@ export default function Todo({ text, todo, todos, setTodos, dones, setDones }) {
           <div className="circle"></div>
         </button>
         <div className="text">{text}</div>
-        {/* <button onClick={deleteHandler} className="button2">
-          <i className="fas fa-trash"></i>
-        </button> */}
+        <button onClick={deleteHandler} className="button2">
+          <i className="fas fa-recycle"></i>
+        </button>
       </li>
     </div>
   );

@@ -28,9 +28,9 @@ export default function Done({
           </div>
         </button>
         <div className="done-text">{text}</div>
-        {/* <button onClick={deleteHandler} className="button2">
-                    <i className="fas fa-trash"></i>
-                </button> */}
+        <button onClick={deleteHandler} className="button2">
+          <i className="fas fa-recycle"></i>
+        </button>
       </li>
     </div>
   );

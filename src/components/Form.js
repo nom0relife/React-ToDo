@@ -34,7 +34,7 @@ export default function Form({
         id=""
       />
       <button onClick={submitHandler} className="btn">
-        <i class="fas fa-arrow-circle-right"></i>
+        <i className="fas fa-arrow-circle-right"></i>
       </button>
     </form>
   );

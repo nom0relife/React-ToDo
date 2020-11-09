@@ -9,23 +9,25 @@
 }
 
 .App .navbar {
+  position: relative;
   grid-area: nav;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
       grid-template-columns: 1fr 2fr 1fr;
-  height: 20vh;
+  height: 10vh;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "burger title ." ". title ." ". menu .";
-  color: #c8c8c8;
+      grid-template-areas: "burger title ." "burger title .";
 }
 
 .App .navbar .burger {
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: burger;
   cursor: pointer;
+  z-index: 100;
 }
 
 .App .navbar .ham div:nth-child(1) {
@@ -76,11 +78,30 @@
   -ms-grid-column: 2;
   grid-area: title;
   text-align: center;
+  color: #c8c8c8;
 }
 
-.App .navbar .menu {
-  -ms-grid-row: 3;
-  -ms-grid-column: 2;
+.App .navbar .sideBar-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50em;
+  height: 100%;
+  opacity: 0.8;
+  background-color: #7436f1;
+  z-index: 10;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.App .navbar .sideBar {
+  left: -50em;
+  width: -50em;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.App .menu {
   grid-area: menu;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,15 +121,17 @@
   height: auto;
   border-radius: 100px;
   position: relative;
+  color: #c8c8c8;
 }
 
-.App .navbar .menu i {
+.App .menu i {
   position: absolute;
   left: 10px;
   font-size: 25px;
+  color: #c8c8c8;
 }
 
-.App .navbar .menu i:after {
+.App .menu i:after {
   content: "";
   position: absolute;
   border: 3px solid #c8c8c8;
@@ -119,7 +142,7 @@
   top: -7px;
 }
 
-.App .navbar .burger div {
+.App .burger div {
   width: 30px;
   height: 3px;
   background-color: #c8c8c8;
@@ -135,9 +158,9 @@
   grid-area: todoNav;
   display: -ms-grid;
   display: grid;
-  height: 15vh;
+  height: 25vh;
       grid-template-areas: "plus plus plus" "icons icons icons";
-  background-color: #7436f1;
+  background-color: #393c43;
 }
 
 .App .todoNav .form-menu {
@@ -153,7 +176,7 @@
   color: #c8c8c8;
   position: absolute;
   left: 50%;
-  top: -42px;
+  top: -45px;
   z-index: 100;
   cursor: pointer;
 }
@@ -166,72 +189,28 @@
 }
 
 .App .todoNav .form-menu .noCross {
+  top: 120px;
   -webkit-transform: translate(-50%) rotate(0deg);
           transform: translate(-50%) rotate(0deg);
   -webkit-transition: 0.8s ease-in-out;
   transition: 0.8s ease-in-out;
 }
 
-.App .todoNav .form-icons {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: icons;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #c8c8c8;
-  -webkit-transition: 0.8s ease-in-out;
-  transition: 0.8s ease-in-out;
-  visibility: visible;
-}
-
-.App .todoNav .form-icons .fas {
-  font-size: 80px;
-}
-
-.App .todoNav .form-icons .far {
-  font-size: 80px;
-}
-
-.App .todoNav .no-form-icons {
-  visibility: none;
-  -webkit-transition: visibility 0.8s;
-  transition: visibility 0.8s;
-}
-
 .App .todoNav .noInputForm {
-  visibility: 0;
+  position: absolute;
+  height: 0vh;
+  background-color: #393c43;
   z-index: -8;
-  -webkit-transition: visibility 0.8s;
-  transition: visibility 0.8s;
-}
-
-.App .todoNav .noInputForm .input {
-  display: none;
-}
-
-.App .todoNav .noInputForm .input input[type="text"] {
-  border-radius: 100px;
-  -webkit-transition: 0.8s linear;
-  transition: 0.8s linear;
-}
-
-.App .todoNav .noInputForm .input .btn .fas {
-  display: none;
-  -webkit-transition: display 0.8s;
-  transition: display 0.8s;
+  -webkit-transition: height 0.8s ease-in-out;
+  transition: height 0.8s ease-in-out;
 }
 
 .App .todoNav .input-form {
   position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 15vh;
+  height: 25vh;
   background-color: #7436f1;
   z-index: 1;
   display: -webkit-box;
@@ -243,6 +222,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transition: height 0.8s ease-in-out;
+  transition: height 0.8s ease-in-out;
 }
 
 .App .todoNav .input-form .input {
@@ -260,7 +241,7 @@
 }
 
 .App .todo-list {
-  width: 100%;
+  width: 94%;
   margin: 0 auto;
 }
 
@@ -276,6 +257,7 @@
   list-style: none;
   color: #9a9a9d;
   font-size: 1.5rem;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -333,14 +315,14 @@
   padding-bottom: 0.2rem;
 }
 
-.App .done-container li button {
+.App .done-container li .button1 {
   border: none;
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   background-color: #ffffff;
 }
 
-.App .done-container li button .circle {
+.App .done-container li .button1 .circle {
   margin-left: 0.5rem;
   height: 1.2rem;
   width: 1.2rem;
@@ -349,33 +331,68 @@
   border: 2px solid #7436f1;
 }
 
-.App .done-container li button .circle .tick1 {
+.App .done-container li .button1 .circle .tick1 {
   width: 1px;
   height: 10px;
-  border: 1px solid #7436f1;
+  border: 1.3px solid #7436f1;
   border-radius: 10px;
   background-color: #7436f1;
   -webkit-transform: translate(4px, 3px) rotate(-28deg);
           transform: translate(4px, 3px) rotate(-28deg);
 }
 
-.App .done-container li button .circle .tick2 {
+.App .done-container li .button1 .circle .tick2 {
   width: 1px;
   height: 18px;
-  border: 1px solid #7436f1;
+  border: 1.3px solid #7436f1;
   background-color: #7436f1;
   -webkit-transform: translate(10px, -15px) rotate(25deg);
           transform: translate(10px, -15px) rotate(25deg);
   border-radius: 10px;
 }
 
+.App .done-container li .button2 {
+  border: none;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: #ffffff;
+}
+
+.App .done-container li .button2 .fas {
+  margin-right: 0.5rem;
+  color: #7436f1;
+}
+
+.App .todo-container li .button2 {
+  border: none;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: #ffffff;
+}
+
+.App .todo-container li .button2 .fas {
+  margin-right: 0.5rem;
+  color: #7436f1;
+}
+
 @media only screen and (min-width: 600px) {
-  .input-form .input {
+  .App .input-form .input {
     font-size: 25px !important;
     padding: 1em 1em 0;
   }
-  .input-form .input .btn .fas {
+  .App .input-form .input .btn .fas {
     font-size: 25px !important;
+  }
+}
+
+@media only screen and (min-width: 780px) {
+  .App {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .App .menu {
+    min-width: 500px;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -17,20 +17,21 @@ $white: #ffffff;
   height: 100vh;
 
   .navbar {
+    position: relative;
     grid-area: nav;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    height: 20vh;
+    height: 10vh;
     grid-template-rows: auto;
     grid-template-areas:
       "burger title ."
-      ". title ."
-      ". menu .";
+      "burger title .";
 
     .burger {
       grid-area: burger;
       // height: 1vh;
       cursor: pointer;
+      z-index: 100;
     }
 
     .ham {
@@ -73,46 +74,66 @@ $white: #ffffff;
     .title {
       grid-area: title;
       text-align: center;
+      color: $text;
     }
-    .menu {
-      grid-area: menu;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      border: 3px solid $purple;
-      min-width: 200px;
-      height: auto;
-      border-radius: 100px;
-      position: relative;
 
-      i {
-        position: absolute;
-        left: 10px;
-        font-size: 25px;
-        // padding-right: 10px;
-
-        &:after {
-          content: "";
-          position: absolute;
-          border: 3px solid $text;
-          width: 40px;
-          height: 40px;
-          border-radius: 30px;
-          left: -8px;
-          top: -7px;
-        }
-      }
+    .sideBar-show {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50em;
+      height: 100%;
+      opacity: 0.8;
+      background-color: $purple;
+      z-index: 10;
+      transition: all 0.8s ease-in-out;
     }
+
+    .sideBar {
+      left: -50em;
+      width: -50em;
+      transition: all 0.8s ease-in-out;
+    }
+  }
+
+  .menu {
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid $purple;
+    min-width: 200px;
+    height: auto;
+    border-radius: 100px;
+    position: relative;
     color: $text;
 
-    .burger {
-      div {
-        width: 30px;
-        height: 3px;
-        background-color: $text;
-        margin-bottom: 6px;
+    i {
+      position: absolute;
+      left: 10px;
+      font-size: 25px;
+      color: $text;
+
+      &:after {
+        content: "";
+        position: absolute;
+        border: 3px solid $text;
+        width: 40px;
+        height: 40px;
+        border-radius: 30px;
+        left: -8px;
+        top: -7px;
       }
+    }
+  }
+
+  .burger {
+    div {
+      width: 30px;
+      height: 3px;
+      background-color: $text;
+      margin-bottom: 6px;
     }
   }
 
@@ -124,11 +145,11 @@ $white: #ffffff;
   .todoNav {
     grid-area: todoNav;
     display: grid;
-    height: 15vh;
+    height: 25vh;
     grid-template-areas:
       "plus plus plus"
       "icons icons icons";
-    background-color: $purple;
+    background-color: $background;
 
     .form-menu {
       grid-area: plus;
@@ -139,8 +160,7 @@ $white: #ffffff;
         color: $text;
         position: absolute;
         left: 50%;
-        top: -42px;
-        // transform: translate(-50%);
+        top: -45px;
         z-index: 100;
         cursor: pointer;
       }
@@ -151,65 +171,33 @@ $white: #ffffff;
       }
 
       .noCross {
+        top: 120px;
         transform: translate(-50%) rotate(0deg);
         transition: 0.8s ease-in-out;
       }
     }
 
-    .form-icons {
-      grid-area: icons;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      color: $text;
-      transition: 0.8s ease-in-out;
-      visibility: visible;
-
-      .fas {
-        font-size: 80px;
-      }
-
-      .far {
-        font-size: 80px;
-      }
-    }
-
-    .no-form-icons {
-      visibility: none;
-      // display: none;
-      transition: visibility 0.8s;
-    }
-
     .noInputForm {
-      visibility: 0;
+      position: absolute;
+      height: 0vh;
+      // top: -25vh;
+      background-color: $background;
       z-index: -8;
-      transition: visibility 0.8s;
-
-      .input {
-        display: none;
-        input[type="text"] {
-          border-radius: 100px;
-          transition: 0.8s linear;
-        }
-        .btn {
-          .fas {
-            display: none;
-            transition: display 0.8s;
-          }
-        }
-      }
+      transition: height 0.8s ease-in-out;
     }
 
     .input-form {
       position: absolute;
+      bottom: 0;
+      left: 0;
       width: 100%;
-      height: 15vh;
+      height: 25vh;
       background-color: $purple;
       z-index: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      // transition: 0.8s linear;
+      transition: height 0.8s ease-in-out;
 
       .input {
         font-size: 20px;
@@ -229,7 +217,7 @@ $white: #ffffff;
   }
 
   .todo-list {
-    width: 100%;
+    width: 94%;
     margin: 0 auto;
 
     li {
@@ -240,6 +228,7 @@ $white: #ffffff;
       list-style: none;
       color: $toDoText;
       font-size: 1.5rem;
+      margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       .text {
         flex-grow: 2;
@@ -285,7 +274,7 @@ $white: #ffffff;
         padding-bottom: 0.2rem;
       }
 
-      button {
+      .button1 {
         border: none;
         border-top-left-radius: 12px;
         border-bottom-left-radius: 12px;
@@ -300,7 +289,7 @@ $white: #ffffff;
           .tick1 {
             width: 1px;
             height: 10px;
-            border: 1px solid $purple;
+            border: 1.3px solid $purple;
             border-radius: 10px;
             background-color: $purple;
             transform: translate(4px, 3px) rotate(-28deg);
@@ -308,10 +297,53 @@ $white: #ffffff;
           .tick2 {
             width: 1px;
             height: 18px;
-            border: 1px solid $purple;
+            border: 1.3px solid $purple;
             background-color: $purple;
             transform: translate(10px, -15px) rotate(25deg);
             border-radius: 10px;
+          }
+        }
+      }
+
+      .button2 {
+        border: none;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: $white;
+
+        .fas {
+          margin-right: 0.5rem;
+          color: $purple;
+        }
+      }
+    }
+  }
+
+  .todo-container {
+    li {
+      .button2 {
+        border: none;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: $white;
+
+        .fas {
+          margin-right: 0.5rem;
+          color: $purple;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .input-form {
+      .input {
+        font-size: 25px !important;
+        padding: 1em 1em 0;
+
+        .btn {
+          .fas {
+            font-size: 25px !important;
           }
         }
       }
@@ -319,17 +351,11 @@ $white: #ffffff;
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .input-form {
-    .input {
-      font-size: 25px !important;
-      padding: 1em 1em 0;
-
-      .btn {
-        .fas {
-          font-size: 25px !important;
-        }
-      }
+@media only screen and (min-width: 780px) {
+  .App {
+    justify-content: center;
+    .menu {
+      min-width: 500px;
     }
   }
 }

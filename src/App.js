@@ -25,12 +25,11 @@ function App() {
           <div className="span2"></div>
           <div className="span3"></div>
         </div>
+        <div
+          className={changeClass === false ? "sideBar" : "sideBar-show"}
+        ></div>
         <div className="title">
           <h2>Things</h2>
-        </div>
-        <div className="menu">
-          <i className="fas fa-calendar-alt"></i>
-          <h3>To Do</h3>
         </div>
       </div>
 
@@ -56,10 +55,7 @@ function App() {
             }
           ></i>
         </div>
-        <div className={crossClass === false ? "form-icons" : "no-form-icons"}>
-          <i className="fas fa-calendar-alt"></i>
-          <i className="far fa-check-circle"></i>
-        </div>
+
         <div className={crossClass === false ? "noInputForm" : "input-form"}>
           <Form
             todos={todos}
