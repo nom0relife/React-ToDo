@@ -1,18 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 import "./App.css";
 
 function App() {
+  // const [lists, setLists] = useState([]);
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [dones, setDones] = useState([]);
   const [changeClass, setChangeClass] = useState(false);
   const [crossClass, setCrossClass] = useState(false);
 
-  // const burger = () => {
-  //   //toggle class
-  // };
+  // run once and get existing todos and dones
+  useEffect(() => {
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem("todos"));
+      setTodos(todoLocal);
+    }
+
+    if (localStorage.getItem("dones") === null) {
+      localStorage.setItem("dones", JSON.stringify([]));
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem("dones"));
+      setDones(todoLocal);
+    }
+  }, []);
+
+  // save to local
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+    localStorage.setItem("dones", JSON.stringify(dones));
+  }, [todos, dones]);
 
   return (
     <div className="App">
@@ -25,9 +45,11 @@ function App() {
           <div className="span2"></div>
           <div className="span3"></div>
         </div>
-        <div
-          className={changeClass === false ? "sideBar" : "sideBar-show"}
-        ></div>
+        <div className={changeClass === false ? "sideBar" : "sideBar-show"}>
+          <button href="New list">New list</button>
+          <button href="">My lists</button>
+          <button href="">About</button>
+        </div>
         <div className="title">
           <h2>Things</h2>
         </div>

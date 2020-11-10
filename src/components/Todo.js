@@ -17,7 +17,6 @@ export default function Todo({ text, todo, todos, setTodos, dones, setDones }) {
     <div className="todo-container">
       <li>
         <button onClick={checkHandler} className="button1">
-          {/* <i className="fas fa-check"></i> */}
           <div className="circle"></div>
         </button>
         <div className="text">{text}</div>

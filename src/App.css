@@ -8,6 +8,34 @@
   height: 100vh;
 }
 
+.App .noHam {
+  position: fixed;
+  top: 5em;
+  left: 5em;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.App .noHam div:nth-child(1) {
+  -webkit-transform: translate(0px, 0px) rotate(0deg);
+          transform: translate(0px, 0px) rotate(0deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.App .noHam div:nth-child(2) {
+  opacity: 1;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+.App .noHam div:nth-child(3) {
+  -webkit-transform: translate(0px, 0px) rotate(0deg);
+          transform: translate(0px, 0px) rotate(0deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 .App .navbar {
   position: relative;
   grid-area: nav;
@@ -30,46 +58,36 @@
   z-index: 100;
 }
 
+.App .navbar .ham {
+  position: fixed;
+  top: 5em;
+  left: 90%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
 .App .navbar .ham div:nth-child(1) {
   -webkit-transform: translate(0px, 9px) rotate(-45deg);
           transform: translate(0px, 9px) rotate(-45deg);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .App .navbar .ham div:nth-child(2) {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   opacity: 0;
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .App .navbar .ham div:nth-child(3) {
   -webkit-transform: translate(0px, -9px) rotate(45deg);
           transform: translate(0px, -9px) rotate(45deg);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.App .navbar .noHam div:nth-child(1) {
-  -webkit-transform: translate(0px, 0px) rotate(0deg);
-          transform: translate(0px, 0px) rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-}
-
-.App .navbar .noHam div:nth-child(2) {
-  opacity: 1;
-  -webkit-transition: 1s ease-in-out;
-  transition: 1s ease-in-out;
-}
-
-.App .navbar .noHam div:nth-child(3) {
-  -webkit-transform: translate(0px, 0px) rotate(0deg);
-          transform: translate(0px, 0px) rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .App .navbar .title {
@@ -81,22 +99,79 @@
   color: #c8c8c8;
 }
 
-.App .navbar .sideBar-show {
+.App .navbar .sideBar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 50em;
-  height: 100%;
-  opacity: 0.8;
+  top: 0em;
+  left: 0em;
+  width: 0em;
   background-color: #7436f1;
-  z-index: 10;
+  height: 100vh;
+  z-index: 50;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
 
-.App .navbar .sideBar {
-  left: -50em;
-  width: -50em;
+.App .navbar .sideBar button {
+  outline: none;
+  background-color: #7436f1;
+  border: none;
+  visibility: 0;
+  font-size: 0rem;
+  padding: 0rem;
+  opacity: 0;
+  color: #c8c8c8;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.App .navbar .sideBar-show {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  top: 0em;
+  left: 0em;
+  width: 100vw;
+  background-color: #7436f1;
+  z-index: 50;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.App .navbar .sideBar-show button {
+  outline: none;
+  background-color: #7436f1;
+  border: none;
+  font-size: 2rem;
+  padding: 2rem;
+  opacity: 1;
+  color: #c8c8c8;
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
 }
@@ -177,7 +252,7 @@
   position: absolute;
   left: 50%;
   top: -45px;
-  z-index: 100;
+  z-index: 40;
   cursor: pointer;
 }
 
@@ -198,21 +273,12 @@
 
 .App .todoNav .noInputForm {
   position: absolute;
-  height: 0vh;
-  background-color: #393c43;
-  z-index: -8;
-  -webkit-transition: height 0.8s ease-in-out;
-  transition: height 0.8s ease-in-out;
-}
-
-.App .todoNav .input-form {
-  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 25vh;
+  height: 0vh;
   background-color: #7436f1;
-  z-index: 1;
+  z-index: 15;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,8 +288,45 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transition: height 0.8s ease-in-out;
-  transition: height 0.8s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.App .todoNav .noInputForm .input {
+  display: none;
+  font-size: 20px;
+  padding: 1em 1em 0;
+}
+
+.App .todoNav .noInputForm .input input[type="text"] {
+  border-radius: 12px;
+}
+
+.App .todoNav .noInputForm .input .btn .fas {
+  color: #c8c8c8;
+  font-size: 20px;
+}
+
+.App .todoNav .input-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  background-color: #7436f1;
+  z-index: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+  overflow: hidden;
 }
 
 .App .todoNav .input-form .input {

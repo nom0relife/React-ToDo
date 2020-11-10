@@ -4,7 +4,7 @@ import Done from "./Done";
 
 export default function TodoList({ todos, setTodos, dones, setDones }) {
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid">
       <div className="col-12 text-center mt-2 ">
         <div className="menu">
           <i className="fas fa-calendar-alt"></i>

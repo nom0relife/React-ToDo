@@ -16,6 +16,29 @@ $white: #ffffff;
   width: 100vw;
   height: 100vh;
 
+  .noHam {
+    position: fixed;
+    top: 5em;
+    left: 5em;
+    transition: all 0.8s ease-in-out;
+
+    div:nth-child(1) {
+      transform: translate(0px, 0px) rotate(-0deg);
+      transition: all 0.5s ease-in-out;
+      // transform: translate(0px, 10px);
+    }
+
+    div:nth-child(2) {
+      opacity: 1;
+      transition: all 1s ease-in-out;
+    }
+
+    div:nth-child(3) {
+      transform: translate(0px, 0px) rotate(0deg);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
   .navbar {
     position: relative;
     grid-area: nav;
@@ -35,39 +58,27 @@ $white: #ffffff;
     }
 
     .ham {
+      position: fixed;
+      top: 5em;
+      left: 90%;
+      transform: translateX(-50%);
+      transition: all 0.8s ease-in-out;
+
       div:nth-child(1) {
         transform: translate(0px, 9px) rotate(-45deg);
-        transition: 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
         // transform: translate(0px, 10px);
       }
 
       div:nth-child(2) {
         transform: rotate(360deg);
         opacity: 0;
-        transition: 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
 
       div:nth-child(3) {
         transform: translate(0px, -9px) rotate(45deg);
-        transition: 0.5s ease-in-out;
-      }
-    }
-
-    .noHam {
-      div:nth-child(1) {
-        transform: translate(0px, 0px) rotate(-0deg);
-        transition: 0.5s ease-in-out;
-        // transform: translate(0px, 10px);
-      }
-
-      div:nth-child(2) {
-        opacity: 1;
-        transition: 1s ease-in-out;
-      }
-
-      div:nth-child(3) {
-        transform: translate(0px, 0px) rotate(0deg);
-        transition: 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
     }
 
@@ -77,22 +88,56 @@ $white: #ffffff;
       color: $text;
     }
 
+    .sideBar {
+      position: fixed;
+      top: 0em;
+      left: 0em;
+      width: 0em;
+      background-color: $purple;
+      height: 100vh;
+      z-index: 50;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      transition: all 0.8s ease-in-out;
+      button {
+        outline: none;
+        background-color: $purple;
+        border: none;
+        visibility: 0;
+        font-size: 0rem;
+        padding: 0rem;
+        opacity: 0;
+        color: $text;
+        transition: all 0.5s ease-in-out;
+      }
+    }
     .sideBar-show {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 50em;
-      height: 100%;
-      opacity: 0.8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      top: 0em;
+      left: 0em;
+      width: 100vw;
       background-color: $purple;
-      z-index: 10;
+      z-index: 50;
+      height: 100vh;
+      overflow: hidden;
       transition: all 0.8s ease-in-out;
-    }
-
-    .sideBar {
-      left: -50em;
-      width: -50em;
-      transition: all 0.8s ease-in-out;
+      button {
+        outline: none;
+        background-color: $purple;
+        border: none;
+        font-size: 2rem;
+        padding: 2rem;
+        opacity: 1;
+        color: $text;
+        transition: all 0.8s ease-in-out;
+      }
     }
   }
 
@@ -161,7 +206,7 @@ $white: #ffffff;
         position: absolute;
         left: 50%;
         top: -45px;
-        z-index: 100;
+        z-index: 40;
         cursor: pointer;
       }
 
@@ -179,11 +224,30 @@ $white: #ffffff;
 
     .noInputForm {
       position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       height: 0vh;
-      // top: -25vh;
-      background-color: $background;
-      z-index: -8;
-      transition: height 0.8s ease-in-out;
+      background-color: $purple;
+      z-index: 15;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.8s ease-in-out;
+      .input {
+        display: none;
+        font-size: 20px;
+        padding: 1em 1em 0;
+        input[type="text"] {
+          border-radius: 12px;
+        }
+        .btn {
+          .fas {
+            color: $text;
+            font-size: 20px;
+          }
+        }
+      }
     }
 
     .input-form {
@@ -193,11 +257,12 @@ $white: #ffffff;
       width: 100%;
       height: 25vh;
       background-color: $purple;
-      z-index: 1;
+      z-index: 15;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: height 0.8s ease-in-out;
+      transition: all 0.8s ease-in-out;
+      overflow: hidden;
 
       .input {
         font-size: 20px;
