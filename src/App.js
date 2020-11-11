@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
+import ListForm from "./components/ListForm";
 import TodoList from "./components/TodoList";
 import "./App.css";
 
 function App() {
-  // const [lists, setLists] = useState([]);
+  const [lists, setLists] = useState([]);
+  const [inputListText, setInputListText] = useState("");
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [dones, setDones] = useState([]);
   const [changeClass, setChangeClass] = useState(false);
   const [crossClass, setCrossClass] = useState(false);
+  const [drop, setDrop] = useState(false);
 
   // run once and get existing todos and dones
   useEffect(() => {
@@ -46,12 +49,29 @@ function App() {
           <div className="span3"></div>
         </div>
         <div className={changeClass === false ? "sideBar" : "sideBar-show"}>
-          <button href="New list">New list</button>
+          <div className="button-container">
+            <button
+              onClick={() => {
+                setDrop(!drop);
+              }}
+            >
+              New list
+            </button>
+            <div className={drop === false ? "dropdown1-hide" : "dropdown1"}>
+              <ListForm
+                lists={lists}
+                setLists={setLists}
+                inputListText={inputListText}
+                setInputListText={setInputListText}
+              />
+            </div>
+          </div>
           <button href="">My lists</button>
           <button href="">About</button>
         </div>
         <div className="title">
           <h2>Things</h2>
+          <h3>List Name here</h3>
         </div>
       </div>
 

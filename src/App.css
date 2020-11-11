@@ -138,6 +138,28 @@
   transition: all 0.5s ease-in-out;
 }
 
+.App .navbar .sideBar .dropdown1-hide {
+  display: none;
+}
+
+.App .navbar .sideBar .dropdown1 {
+  display: none;
+}
+
+.App .navbar .sideBar .button-container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.App .navbar .sideBar .button-container .dropdown1-hide {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 30rem;
+  height: 15vh;
+  margin: 0 auto;
+}
+
 .App .navbar .sideBar-show {
   position: fixed;
   display: -webkit-box;
@@ -174,6 +196,86 @@
   color: #c8c8c8;
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+}
+
+.App .navbar .sideBar-show .button-container {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1-hide {
+  opacity: 0;
+  width: 0;
+  visibility: hidden;
+  height: 0vh;
+  z-index: -10;
+  border-radius: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1-hide .listInput {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1-hide .listInput .btn-white {
+  font-size: 0rem;
+  padding: 0;
+  background-color: #393c43;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1-hide .listInput input {
+  visibility: hidden;
+  font-size: 0rem;
+  color: #9a9a9d;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1 {
+  background-color: #393c43;
+  width: 100%;
+  visibility: 1;
+  opacity: 1;
+  max-width: 30rem;
+  height: 10vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  visibility: visible;
+  opacity: 1;
+  border-radius: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1 .listInput {
+  visibility: visible;
+  opacity: 1;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1 .listInput .btn-white {
+  font-size: 1.3rem;
+  padding: 0.3rem;
+  background-color: #393c43;
+}
+
+.App .navbar .sideBar-show .button-container .dropdown1 .listInput input {
+  font-size: 1.3rem;
+  color: #9a9a9d;
+  font-weight: bold;
+  max-width: 200px;
 }
 
 .App .menu {

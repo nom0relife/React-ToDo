@@ -102,6 +102,7 @@ $white: #ffffff;
       align-items: center;
       justify-content: flex-start;
       transition: all 0.8s ease-in-out;
+
       button {
         outline: none;
         background-color: $purple;
@@ -112,6 +113,27 @@ $white: #ffffff;
         opacity: 0;
         color: $text;
         transition: all 0.5s ease-in-out;
+      }
+
+      .dropdown1-hide {
+        display: none;
+      }
+
+      .dropdown1 {
+        display: none;
+      }
+
+      .button-container {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        .dropdown1-hide {
+          background-color: $white;
+          width: 100%;
+          max-width: 30rem;
+          height: 15vh;
+          margin: 0 auto;
+        }
       }
     }
     .sideBar-show {
@@ -137,6 +159,73 @@ $white: #ffffff;
         opacity: 1;
         color: $text;
         transition: all 0.8s ease-in-out;
+      }
+
+      .button-container {
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+
+        .dropdown1-hide {
+          opacity: 0;
+          width: 0;
+          visibility: hidden;
+          height: 0vh;
+          z-index: -10;
+          border-radius: none;
+          transition: all 0.5s ease-in-out;
+
+          .listInput {
+            opacity: 0;
+            visibility: hidden;
+            .btn-white {
+              font-size: 0rem;
+              padding: 0;
+              background-color: $background;
+            }
+            input {
+              visibility: hidden;
+              font-size: 0rem;
+              color: $toDoText;
+              // max-width: 200px;
+            }
+          }
+        }
+
+        .dropdown1 {
+          background-color: $background;
+          width: 100%;
+          visibility: 1;
+          opacity: 1;
+          max-width: 30rem;
+          height: 10vh;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          visibility: visible;
+          opacity: 1;
+          border-radius: 20px;
+          transition: all 0.4s ease-in-out;
+
+          .listInput {
+            visibility: visible;
+            opacity: 1;
+            .btn-white {
+              font-size: 1.3rem;
+              // font-size: 1rem;
+              padding: 0.3rem;
+              background-color: $background;
+            }
+            input {
+              font-size: 1.3rem;
+              color: $toDoText;
+              font-weight: bold;
+              max-width: 200px;
+            }
+          }
+        }
       }
     }
   }
