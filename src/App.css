@@ -125,6 +125,10 @@
   transition: all 0.8s ease-in-out;
 }
 
+.App .navbar .sideBar h1 {
+  display: none;
+}
+
 .App .navbar .sideBar button {
   outline: none;
   background-color: #7436f1;
@@ -147,17 +151,11 @@
 }
 
 .App .navbar .sideBar .button-container {
-  margin: 0 auto;
-  width: 80%;
-  text-align: center;
+  display: none;
 }
 
 .App .navbar .sideBar .button-container .dropdown1-hide {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 30rem;
-  height: 15vh;
-  margin: 0 auto;
+  display: none;
 }
 
 .App .navbar .sideBar-show {
@@ -184,6 +182,15 @@
   overflow: hidden;
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
+}
+
+.App .navbar .sideBar-show h1 {
+  padding: 2em 0em;
+  color: #c8c8c8;
+  background-image: -webkit-gradient(linear, left top, right top, from(#7436f1), to(#c8c8c8));
+  background-image: linear-gradient(to right, #7436f1, #c8c8c8);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .App .navbar .sideBar-show button {

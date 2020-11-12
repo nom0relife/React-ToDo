@@ -103,6 +103,10 @@ $white: #ffffff;
       justify-content: flex-start;
       transition: all 0.8s ease-in-out;
 
+      h1 {
+        display: none;
+      }
+
       button {
         outline: none;
         background-color: $purple;
@@ -124,15 +128,12 @@ $white: #ffffff;
       }
 
       .button-container {
-        margin: 0 auto;
-        width: 80%;
-        text-align: center;
+        // margin: 0 auto;
+        // width: 80%;
+        // text-align: center;
+        display: none;
         .dropdown1-hide {
-          background-color: $white;
-          width: 100%;
-          max-width: 30rem;
-          height: 15vh;
-          margin: 0 auto;
+          display: none;
         }
       }
     }
@@ -142,6 +143,7 @@ $white: #ffffff;
       flex-direction: column;
       align-items: center;
       justify-content: start;
+      // padding-top: 10em;
       top: 0em;
       left: 0em;
       width: 100vw;
@@ -150,6 +152,14 @@ $white: #ffffff;
       height: 100vh;
       overflow: hidden;
       transition: all 0.8s ease-in-out;
+
+      h1 {
+        padding: 2em 0em;
+        color: $text;
+        background-image: linear-gradient(to right, $purple, $text);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
       button {
         outline: none;
         background-color: $purple;

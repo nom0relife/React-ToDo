@@ -6,6 +6,7 @@ import "./App.css";
 
 function App() {
   const [lists, setLists] = useState([]);
+  const [currentList, setCurrentList] = useState([]);
   const [inputListText, setInputListText] = useState("");
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
@@ -42,13 +43,14 @@ function App() {
       <div className="navbar ">
         <div
           onClick={() => setChangeClass(!changeClass)}
-          className={changeClass === false ? "burger noHam" : "burger ham"}
+          className={changeClass === false ? "burger ham" : "burger noHam"}
         >
           <div className="span1"></div>
           <div className="span2"></div>
           <div className="span3"></div>
         </div>
-        <div className={changeClass === false ? "sideBar" : "sideBar-show"}>
+        <div className={changeClass === false ? "sideBar-show" : "sideBar"}>
+          <h1>Things</h1>
           <div className="button-container">
             <button
               onClick={() => {
@@ -63,6 +65,16 @@ function App() {
                 setLists={setLists}
                 inputListText={inputListText}
                 setInputListText={setInputListText}
+                todos={todos}
+                setTodos={setTodos}
+                dones={dones}
+                setDones={setDones}
+                crossClass={crossClass}
+                changeClass={changeClass}
+                setChangeClass={setChangeClass}
+                setCrossClass={setCrossClass}
+                currentList={currentList}
+                setCurrentList={setCurrentList}
               />
             </div>
           </div>
@@ -71,7 +83,7 @@ function App() {
         </div>
         <div className="title">
           <h2>Things</h2>
-          <h3>List Name here</h3>
+          <h3>{currentList}</h3>
         </div>
       </div>
 
