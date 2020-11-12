@@ -41,9 +41,6 @@ export default function ListForm({
           dones: [],
         },
       ]);
-      // console.log(lists);
-      // setCurrentList(this.lists.listName);
-      // setNewListTitle();
       setChangeClass(!changeClass);
       setCrossClass(!crossClass);
       setInputListText("");
@@ -52,11 +49,6 @@ export default function ListForm({
       console.log("error");
     }
   };
-
-  // const setNewListTitle = () => {
-  //   console.log(lists);
-  //   setCurrentList(lists[0].listName);
-  // };
 
   return (
     <div>
