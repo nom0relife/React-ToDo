@@ -16,9 +16,9 @@ export default function ListForm({
   currentList,
   setCurrentList,
 }) {
-  useEffect(() => {
-    submitHandler();
-  }, [lists]);
+  // useEffect(() => {
+
+  // }, [lists]);
 
   //form input text
   const textHandler = (e) => {
