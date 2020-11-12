@@ -43,7 +43,7 @@ export default function ListForm({
       ]);
       // console.log(lists);
       // setCurrentList(this.lists.listName);
-      setNewListTitle();
+      // setNewListTitle();
       setChangeClass(!changeClass);
       setCrossClass(!crossClass);
       setInputListText("");
@@ -53,10 +53,10 @@ export default function ListForm({
     }
   };
 
-  const setNewListTitle = () => {
-    console.log(lists);
-    setCurrentList(lists[0].listName);
-  };
+  // const setNewListTitle = () => {
+  //   console.log(lists);
+  //   setCurrentList(lists[0].listName);
+  // };
 
   return (
     <div>
