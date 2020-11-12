@@ -4,19 +4,19 @@ import ListForm from "./components/ListForm";
 import TodoList from "./components/TodoList";
 import "./App.css";
 
-function Lists(props) {
-  return props.lists.map((object) => (
-    <div key={object.id}>
-      <h2>{object.listName}</h2>
-      <TodoList
-        todos={props.todos}
-        setTodos={props.setTodos}
-        dones={props.dones}
-        setDones={props.setDones}
-      />
-    </div>
-  ));
-}
+// function Lists(props) {
+//   return props.lists.map((object) => (
+//     <div key={object.id}>
+//       <h2>{object.listName}</h2>
+//       <TodoList
+//         todos={props.todos}
+//         setTodos={props.setTodos}
+//         dones={props.dones}
+//         setDones={props.setDones}
+//       />
+//     </div>
+//   ));
+// }
 
 function App() {
   const [lists, setLists] = useState([]);
@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="navbar ">
+      <div className="navbar">
         <div
           onClick={() => setChangeClass(!changeClass)}
           className={changeClass === false ? "burger ham" : "burger noHam"}
@@ -99,13 +99,13 @@ function App() {
         </div>
         <div className="title">
           <h2>Things</h2>
-          <Lists
+          {/* <Lists
             lists={lists}
             todos={todos}
             setTodos={setTodos}
             dones={dones}
             setDones={setDones}
-          />
+          /> */}
         </div>
       </div>
 
