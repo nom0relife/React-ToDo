@@ -4,6 +4,20 @@ import ListForm from "./components/ListForm";
 import TodoList from "./components/TodoList";
 import "./App.css";
 
+function Lists(props) {
+  return props.lists.map((object) => (
+    <div key={object.id}>
+      <h2>{object.listName}</h2>
+      <TodoList
+        todos={props.todos}
+        setTodos={props.setTodos}
+        dones={props.dones}
+        setDones={props.setDones}
+      />
+    </div>
+  ));
+}
+
 function App() {
   const [lists, setLists] = useState([]);
   const [currentList, setCurrentList] = useState([]);
@@ -85,7 +99,13 @@ function App() {
         </div>
         <div className="title">
           <h2>Things</h2>
-          <h3>{currentList}</h3>
+          <Lists
+            lists={lists}
+            todos={todos}
+            setTodos={setTodos}
+            dones={dones}
+            setDones={setDones}
+          />
         </div>
       </div>
 
