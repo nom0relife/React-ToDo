@@ -15,7 +15,9 @@ function App() {
   const [crossClass, setCrossClass] = useState(false);
   const [drop, setDrop] = useState(false);
 
+  // console.log(lists);
   // run once and get existing todos and dones
+
   useEffect(() => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify([]));

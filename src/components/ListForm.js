@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function ListForm({
   lists,
@@ -16,6 +16,10 @@ export default function ListForm({
   currentList,
   setCurrentList,
 }) {
+  useEffect(() => {
+    submitHandler();
+  }, [lists]);
+
   //form input text
   const textHandler = (e) => {
     setInputListText(e.target.value);
@@ -37,8 +41,9 @@ export default function ListForm({
           dones: [],
         },
       ]);
-      console.log(lists);
+      // console.log(lists);
       // setCurrentList(this.lists.listName);
+      setNewListTitle();
       setChangeClass(!changeClass);
       setCrossClass(!crossClass);
       setInputListText("");
@@ -46,6 +51,11 @@ export default function ListForm({
       // error handling of not giving the right details
       console.log("error");
     }
+  };
+
+  const setNewListTitle = () => {
+    console.log(lists);
+    setCurrentList(lists[0].listName);
   };
 
   return (
